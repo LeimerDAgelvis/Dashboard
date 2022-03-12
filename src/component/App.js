@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
-import Footer from './Footer';
+import "../assets/css/app.css";
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <React.Fragment>
       	<div id="wrapper">
           <Sidebar />
-          <Footer />
+          <Header />
         </div>
     </React.Fragment>
   );
