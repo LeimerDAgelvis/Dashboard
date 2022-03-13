@@ -2,15 +2,17 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import DashboardMain from './Dashboard';
 import "../assets/css/app.css";
-
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
     <React.Fragment>
-      	<div id="wrapper">
-          <Sidebar />
-          <DashboardMain />
-        </div>
+        <BrowserRouter>
+          <div id="wrapper">
+            <Sidebar />
+            <DashboardMain />
+          </div>
+        </BrowserRouter>
     </React.Fragment>
   );
 }
