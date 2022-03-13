@@ -23,14 +23,35 @@ let Productos = {
     icono: "fas fa-user",
 }
 
-const BaseProps = [Usuarios,Categorias,Productos];
+let UltimoProducto = {
+    color:   "primary",
+    titulo: "Último producto creado",
+    valor: "Motherboard ASUS",
+    icono: "fas fa-film",
+}
+
+let UltimoUsuario ={
+    color:   "success",
+    titulo: "Último usuario creado",
+    valor: "Mariano Gomez",
+    icono: "fas fa-award",
+}
+
+let ProductosGabinetes = {
+    color:   "warning",
+    titulo: "Total de Productos en Gabinetes",
+    valor: 12,
+    icono: "fas fa-user",
+}
+
+const BaseProps = [Usuarios,Categorias,Productos, UltimoProducto, UltimoUsuario, ProductosGabinetes];
 
 
 function ContenTop(){
     return (
         <React.Fragment>
         {/*<!-- ContenTop -->*/}
-        <div className="row">
+        <div className="row padded-h">
             {
                 BaseProps.map((Totales,index)=>{
                     return <ContentTotales  {...Totales}  key= {index}/>

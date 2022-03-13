@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from './Sidebar';
-import Header from './Header';
+import DashboardMain from './Dashboard';
 import "../assets/css/app.css";
 
 
@@ -9,7 +9,7 @@ function App() {
     <React.Fragment>
       	<div id="wrapper">
           <Sidebar />
-          <Header />
+          <DashboardMain />
         </div>
     </React.Fragment>
   );

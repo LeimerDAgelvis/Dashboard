@@ -533,6 +533,13 @@ pre code {
   margin-right: -0.75rem;
   margin-left: -0.75rem;
 }
+
+.row.padded-h { 
+  padding: 0 20px;
+ }
+
+.position-top-box { padding: 20px; margin: 20px; }
+
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -9038,7 +9045,7 @@ a:focus {
   width: 2rem;
 }
 .topbar {
-  height: 4.375rem;
+  height: 3.5rem;
 }
 .topbar #sidebarToggleTop {
   height: 2.5rem;
