@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function ProductoDetail(){
 
@@ -64,7 +64,7 @@ function ProductoDetail(){
                         <option value='2'>No</option>
                     </select>
                     <input type="text" name="discount" class="input-producto" value={Producto.discount}/>
-                </div>                                     */}
+                </div> */}
                 <br/>
                 <span>Precio: </span>
                 <br/>
@@ -72,9 +72,10 @@ function ProductoDetail(){
                 <br/>
                 <div className="botones-div"> 
                     <button type="submit" className="boton-agregar">Guardar</button>
-                    <button className="boton-eliminar"><Link to='/'>Eliminar</Link></button>
-                    
                 </div>
+            </form>
+            <form className="productoBox" action={`/products/${Producto.id}?_method=DELETE`} method="POST" encType="multipart/form-data" id="formulario">
+                <button className="boton-eliminar">Eliminar</button>
             </form>
         </div>
     )

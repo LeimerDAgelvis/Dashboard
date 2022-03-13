@@ -10030,10 +10030,7 @@ body.sidebar-toggled footer.sticky-footer {
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
 }
-.botones-div {
-  display: flex;
-  justify-content: space-evenly;
-}
+
 .boton-agregar {
   color: white;
   background: #3483fa;   
@@ -10044,6 +10041,8 @@ body.sidebar-toggled footer.sticky-footer {
   font-size: 20px;
   text-align: center;    
   font-weight: bold;
+  width: 15%;
+  margin-bottom: 0.5rem;
 }
 .boton-eliminar {
   color: white;
@@ -10055,4 +10054,9 @@ body.sidebar-toggled footer.sticky-footer {
   font-size: 20px;
   text-align: center;    
   font-weight: bold;
+  width: 15%;
+}
+.boton-eliminar a{
+  color: white;
+  text-decoration: none;
 }
