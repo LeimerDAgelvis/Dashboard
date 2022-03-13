@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 
 function Sidebar(){
     return(
@@ -12,9 +12,9 @@ function Sidebar(){
 
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
-                    <a className="nav-link" href="/">
+                    <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>G7 Hardware</span></a>
+                        <span>G7 Hardware</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -25,24 +25,24 @@ function Sidebar(){
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                    <a className="nav-link collapsed" href="/">
+                    <Link className="nav-link collapsed" to="/products">
                         <i className="fas fa-fw fa-folder"></i>
                         <span>Productos</span>
-                    </a>
+                    </Link>
                 </li>
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <Link className="nav-link" to="/usuarios">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Usuarios</span></a>
+                        <span>Usuarios</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <Link className="nav-link" to="/categorias">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Categorías</span></a>
+                        <span>Categorías</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
