@@ -10009,3 +10009,50 @@ body.sidebar-toggled footer.sticky-footer {
   display: flex;
   justify-content: center;
 }
+
+.productoBox {
+  display: flex;
+  flex-direction: column;
+}
+#radio {
+  margin-right: 0.2rem;
+}
+.input-producto {
+  width:90%;
+  display: flex;
+  justify-content:center;
+  flex-direction:column;
+  line-height: 1; 
+  align-items: center;
+  border: 1px solid lightslategray;
+  border-radius: 5px;   
+  text-indent: 0.3rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+.botones-div {
+  display: flex;
+  justify-content: space-evenly;
+}
+.boton-agregar {
+  color: white;
+  background: #3483fa;   
+  border: 2px solid #3483fa;
+  border-radius: 5px;
+  box-shadow: 1px 1px #3483fa;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;    
+  font-weight: bold;
+}
+.boton-eliminar {
+  color: white;
+  background: red;   
+  border: 2px solid red;
+  border-radius: 5px;
+  box-shadow: 1px 1px red;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;    
+  font-weight: bold;
+}
