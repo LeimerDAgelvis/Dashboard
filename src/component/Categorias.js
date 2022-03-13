@@ -19,8 +19,8 @@ function Categorias() {
                     </tr>
                 </thead>
                 <tbody>
-                    {Categorias.map(elemento => 
-                        <tr>
+                    {Categorias.map((elemento,i) => 
+                        <tr key={i}>
                             <td>{elemento.id}</td>
                             <td>{elemento.category_name}</td> 
                         </tr>

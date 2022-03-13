@@ -11,7 +11,7 @@ function TablaContent(){
         fetch('/api/products')
         .then(response => response.json())
         .then(data => {
-            console.log(data.data)
+            //console.log(data.data)
             setProductos(data.data);
         })
         .catch(err => console.log(err))

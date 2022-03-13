@@ -4,7 +4,7 @@ import ContentWrapper from './ContentWrapper'
 import Tabla from './Tabla'
 import Usuarios from './Usuarios'
 import Categorias from './Categorias'
-
+import ProductoDetail from './ProductoDetail'
 function Enrutador () {
     return (
         <Routes>
@@ -12,6 +12,7 @@ function Enrutador () {
             <Route path='/usuarios' element={<Usuarios/>}/>
             <Route path='/products' element={<Tabla/>}/>
             <Route path='/categorias' element={<Categorias/>}/>
+            <Route path='/products/:id' element={<ProductoDetail/>}/>
         </Routes>
     )
 }

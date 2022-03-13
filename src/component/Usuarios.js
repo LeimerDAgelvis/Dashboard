@@ -21,8 +21,8 @@ function Usuarios() {
                     </tr>
                 </thead>
                 <tbody>
-                    {Usuarios.map(elemento => 
-                        <tr>
+                    {Usuarios.map((elemento,i) => 
+                        <tr key={i}>
                             <td>{elemento.id}</td>
                             <td>{elemento.fullName}</td> 
                             <td>{elemento.email}</td>
