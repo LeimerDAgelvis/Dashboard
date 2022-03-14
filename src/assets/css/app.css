@@ -9045,7 +9045,7 @@ a:focus {
   width: 2rem;
 }
 .topbar {
-  height: 3.5rem;
+  height: 4.375rem;
 }
 .topbar #sidebarToggleTop {
   height: 2.5rem;
@@ -10003,4 +10003,60 @@ footer.sticky-footer .copyright {
 }
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.productoBox {
+  display: flex;
+  flex-direction: column;
+}
+#radio {
+  margin-right: 0.2rem;
+}
+.input-producto {
+  width:90%;
+  display: flex;
+  justify-content:center;
+  flex-direction:column;
+  line-height: 1; 
+  align-items: center;
+  border: 1px solid lightslategray;
+  border-radius: 5px;   
+  text-indent: 0.3rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.boton-agregar {
+  color: white;
+  background: #3483fa;   
+  border: 2px solid #3483fa;
+  border-radius: 5px;
+  box-shadow: 1px 1px #3483fa;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;    
+  font-weight: bold;
+  width: 15%;
+  margin-bottom: 0.5rem;
+}
+.boton-eliminar {
+  color: white;
+  background: red;   
+  border: 2px solid red;
+  border-radius: 5px;
+  box-shadow: 1px 1px red;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;    
+  font-weight: bold;
+  width: 15%;
+}
+.boton-eliminar a{
+  color: white;
+  text-decoration: none;
 }

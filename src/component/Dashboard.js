@@ -1,8 +1,10 @@
 import React from 'react';
-import ContenTop from './ContenTop';
-import Footer from './Footer';
-import Tabla from './Tabla';
 import Topbar from './Topbar';
+import ContenTop from './ContenTop';
+import Enrutador from './Enrutador';
+import Footer from './Footer';
+
+
 
 function DashboardMain(){
     return (
@@ -11,7 +13,7 @@ function DashboardMain(){
                 <div id="content">
                     <Topbar />
                     <ContenTop/>
-                    <Tabla tituloTabla="Productos" />
+                    <Enrutador />
                 </div>
                 <Footer/>
             </div>
