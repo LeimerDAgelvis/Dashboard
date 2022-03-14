@@ -5,7 +5,7 @@ function ProductoCreate(){
     return (
         <div className="card shadow position-top-box">
             <h3>Crear Producto</h3>
-            <form className="productoBox" action='/products/crear' method="POST" encType="multipart/form-data" id="formulario">
+            <form className="productoBox" action='/api/products/crear' method="POST" encType="multipart/form-data" id="formulario">
                 <br/>
                 <span>Nombre del producto:</span> 
                 <br/>

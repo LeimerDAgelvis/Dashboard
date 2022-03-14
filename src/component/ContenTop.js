@@ -8,8 +8,8 @@ function ContenTop(){
     const [usuarios, setUsuarios] = useState([])
     const [productos, setProductos] = useState([])
     const [categorias, setCategorias] = useState([])
-    const [ultimoUsuario, setUltUsuario] = useState([])
-    const [ultimoProducto, setUltProducto] = useState([])
+    const [ultimoUsuario, setUltUsuario] = useState(true)
+    const [ultimoProducto, setUltProducto] = useState(true)
     
 
     useEffect( () => {
@@ -17,12 +17,14 @@ function ContenTop(){
         .then(response => response.json())
         .then(data => {
             setUsuarios(data)
+            setUltUsuario(false)
         })
 
         fetch('/api/products')
         .then(response => response.json())
         .then(data => {
             setProductos(data)
+            setUltProducto(false)
         })
 
         fetch('/api/categories')
@@ -44,9 +46,13 @@ function ContenTop(){
 
             <ContentTotales titulo='Categorias' total={categorias.count}/>    
 
-            {/* <UltimoCreado titulo='Usuario' ultimo={usuarios.data}/>
-            
-            <UltimoCreado titulo='Producto' ultimo={productos.data}/> */}
+            {
+                ultimoUsuario ? <span>CARGANDO</span> : <UltimoCreado titulo='Usuario' ultimo={usuarios.data.slice(-1)[0].email}/>
+            }
+            {
+                
+                ultimoProducto ? <span>CARGANDO</span> : <UltimoCreado titulo='Producto' ultimo={productos.data.slice(-1)[0].title}/>
+            }
         </div>
         </React.Fragment>
     )

@@ -2,7 +2,6 @@ import React from "react";
 
 function UltimoCreado(props) {
 
-    console.log(props.ultimo.slice(-1))
 
     return (
         <div>
@@ -12,7 +11,8 @@ function UltimoCreado(props) {
                     <div className="card-body">
                         <div className="col mr-2">
                             <div className={`text-xs font-weight-bold text-primary text-uppercase mb-1`}> {` Ultimo ${props.titulo} creado`}</div>
-                            <div className="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                            <div className="h5 mb-0 text-gray-800">{props.ultimo}</div>
+                                    
                         </div>
                     </div>
                 </div>
