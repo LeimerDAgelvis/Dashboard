@@ -33,9 +33,6 @@ function ContenTop(){
 
     }, [])
 
-	
-
-
     return (
         <React.Fragment>
         {/*<!-- ContenTop -->*/}
@@ -49,8 +46,7 @@ function ContenTop(){
             {
                 ultimoUsuario ? <span>CARGANDO</span> : <UltimoCreado titulo='Usuario' ultimo={usuarios.data.slice(-1)[0].email}/>
             }
-            {
-                
+            {               
                 ultimoProducto ? <span>CARGANDO</span> : <UltimoCreado titulo='Producto' ultimo={productos.data.slice(-1)[0].title}/>
             }
         </div>
