@@ -10,7 +10,7 @@ function Usuarios() {
     }, [])
 
     return (
-        <div className="card shadow position-top-box">
+        <div className="card shadow position-top-box fit">
             <h3>Usuarios</h3>
             <table className="table">
                 <thead>

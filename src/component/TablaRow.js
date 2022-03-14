@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import ProductoDetail from "./ProductoDetail";
 
 function TablaRow(props){
     //console.log('row', props);

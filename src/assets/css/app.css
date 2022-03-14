@@ -10010,9 +10010,13 @@ body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
 
+.fit {
+  min-width: max-content;
+}
 .wrapper {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .productoBox {
@@ -10063,6 +10067,10 @@ body.sidebar-toggled footer.sticky-footer {
   border: 2px solid #3483fa;
   box-shadow: 1px 1px #3483fa;
   margin-right: 5px;
+}
+.boton-editar a {
+  color: white;
+  text-decoration: none;
 }
 .boton-eliminar {
   background: red;
