@@ -10068,6 +10068,10 @@ body.sidebar-toggled footer.sticky-footer {
   box-shadow: 1px 1px #3483fa;
   margin-right: 5px;
 }
+.boton-editar a {
+  color: white;
+  text-decoration: none;
+}
 .boton-eliminar {
   background: red;
   border: 2px solid red;

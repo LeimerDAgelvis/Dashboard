@@ -52,7 +52,7 @@ function ProductoCreate(){
                         <option value='1'>Si</option>
                         <option value='2'>No</option>
                     </select>
-                    <input type="text" name="discount" className="input-producto" value='0'/>
+                    <input type="text" name="discount" className="input-producto" />
                 </div>
                 <br/>
                 <span>Precio: </span>
