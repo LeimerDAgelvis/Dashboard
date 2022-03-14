@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import TablaContent from "./TablaContent";
 
 function Tabla({tituloTabla}){
@@ -7,6 +8,7 @@ function Tabla({tituloTabla}){
             <div className="card shadow position-top-box">
         {/*<!-- ContenTop -->*/}
         <h3>{tituloTabla}</h3>
+        <button className="boton boton-agregar"><Link to='/products/crear'>Crear</Link></button>
         <table className="table">
         <thead>
         <tr>

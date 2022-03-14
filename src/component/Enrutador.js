@@ -5,6 +5,7 @@ import Tabla from './Tabla'
 import Usuarios from './Usuarios'
 import Categorias from './Categorias'
 import ProductoDetail from './ProductoDetail'
+import ProductoCreate from './ProductoCreate'
 function Enrutador () {
     return (
         <Routes>
@@ -13,6 +14,7 @@ function Enrutador () {
             <Route path='/products' element={<Tabla/>}/>
             <Route path='/categorias' element={<Categorias/>}/>
             <Route path='/products/:id' element={<ProductoDetail/>}/>
+            <Route path='/products/crear' element={<ProductoCreate/>}/>
         </Routes>
     )
 }

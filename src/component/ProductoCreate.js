@@ -1,41 +1,30 @@
-import React, {useState, useEffect} from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 
-function ProductoDetail(){
-
-    const [Producto, setProducto] = useState({})
-
-    let { id } = useParams()
-
-    useEffect( () => {
-        fetch(`/api/products/${id}`)
-        .then(response => response.json())
-        .then(data => setProducto(data))
-    }, [])
+function ProductoCreate(){
 
     return (
         <div className="card shadow position-top-box">
-            <h3>{Producto.title}</h3>
-            <form className="productoBox" action={`/products/${Producto.id}?_method=PUT`} method="POST" encType="multipart/form-data" id="formulario">
+            <h3>Crear Producto</h3>
+            <form className="productoBox" action='/products' method="POST" encType="multipart/form-data" id="formulario">
                 <br/>
                 <span>Nombre del producto:</span> 
                 <br/>
-                <input type="text" name= "title" className="input-producto" value={Producto.title}/>
+                <input type="text" name= "title" className="input-producto" />
                 <br/>
                 <span>Descripcion del producto:</span>
                 <br/>
-                <textarea className="input-producto" rows= "10" cols="50" name= "description" value={Producto.description}></textarea>
+                <textarea className="input-producto" rows= "10" cols="50" name= "description" ></textarea>
                 <br/>
                 <span>Modelo: </span>
                 <br/>
-                <input type="text" name="model" className="input-producto" value={Producto.model}/>                                                  
+                <input type="text" name="model" className="input-producto" />                                                  
                 <br/>
                 <span>Imagen:</span>
                 <br/>
-                <div><img src={`/img/productos/${Producto.img}`} alt={Producto.title}/></div>
+                <div></div>
                 <input className="img" type="file" name= "img" />
                 <br/>
-                {/* <span>Categoria:</span>
+                <span>Categoria:</span>
                 <br/>
                 <div className="categorias">
                     <input type='radio' id='radio' value='Motherboard'/>
@@ -55,29 +44,27 @@ function ProductoDetail(){
                     <br/>
                     <input type='radio' id='radio' value='Otros'/>
                     <label for="Otros"> Otros</label>
-                </div> */}
-                {/* <div>
+                </div>
+                <div>
                     <span>Descuento: </span>
                     <br/>
                     <select>
                         <option value='1'>Si</option>
                         <option value='2'>No</option>
                     </select>
-                    <input type="text" name="discount" class="input-producto" value={Producto.discount}/>
-                </div> */}
+                    <input type="text" name="discount" class="input-producto" value='0'/>
+                </div>
                 <br/>
                 <span>Precio: </span>
                 <br/>
-                <input type="text" name="price" className="input-producto" value={Producto.price}/>                                                  
+                <input type="text" name="price" className="input-producto" />                                                  
                 <br/>
                 <div className="botones-div"> 
                     <button type="submit" className="boton boton-editar">Guardar</button>
+                    <button type="reset" className="boton boton-eliminar">Reset</button>
                 </div>
-            </form>
-            <form className="productoBox" action={`/products/${Producto.id}?_method=DELETE`} method="POST" encType="multipart/form-data" id="formulario">
-                <button className="boton boton-eliminar">Eliminar</button>
             </form>
         </div>
     )
 }
-export default ProductoDetail;
+export default ProductoCreate;

@@ -10035,13 +10035,9 @@ body.sidebar-toggled footer.sticky-footer {
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
 }
-
-.boton-agregar {
+.boton {
   color: white;
-  background: #3483fa;
-  border: 2px solid #3483fa;
   border-radius: 5px;
-  box-shadow: 1px 1px #3483fa;
   font-family: sans-serif;
   font-size: 20px;
   text-align: center;
@@ -10049,17 +10045,29 @@ body.sidebar-toggled footer.sticky-footer {
   width: 15%;
   margin-bottom: 0.5rem;
 }
+.boton-agregar {
+  background: yellow;
+  border: 2px solid black;
+  box-shadow: 1px 1px yellow;
+  height: 1.8rem;
+  width: 10%;
+  font-size: 15px;
+  font-weight: 600;
+}
+.boton-agregar a {
+  color: black;
+  text-decoration: none;
+}
+.boton-editar {
+  background: #3483fa;
+  border: 2px solid #3483fa;
+  box-shadow: 1px 1px #3483fa;
+  margin-right: 5px;
+}
 .boton-eliminar {
-  color: white;
   background: red;
   border: 2px solid red;
-  border-radius: 5px;
   box-shadow: 1px 1px red;
-  font-family: sans-serif;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;
-  width: 15%;
 }
 .boton-eliminar a {
   color: white;
