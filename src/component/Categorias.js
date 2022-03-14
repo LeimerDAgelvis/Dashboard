@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 
 function Categorias() {
     const [Categorias, setCategorias] = useState([])
@@ -31,4 +31,4 @@ function Categorias() {
     )
 }
 
-export default Categorias
+export default Categorias;

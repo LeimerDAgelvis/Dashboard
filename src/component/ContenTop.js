@@ -1,6 +1,6 @@
 import React from "react";
 import ContentTotales from './ContentTotales'
-import { useState, useEffect } from 'react'
+import {useState, useEffect } from 'react'
 
 function ContenTop(){
 
