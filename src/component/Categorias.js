@@ -9,7 +9,7 @@ function Categorias() {
         .then(data => setCategorias(data.data))
     }, [])
     return (
-        <div className="card shadow position-top-box">
+        <div className="card shadow position-top-box fit">
             <h3>Categorias</h3>
             <table className="table">
                 <thead>
