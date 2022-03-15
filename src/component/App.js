@@ -15,7 +15,7 @@ function App() {
         </BrowserRouter>
     </React.Fragment>
   );
-}
+} 
 
 export default App;
 
