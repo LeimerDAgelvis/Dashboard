@@ -10050,32 +10050,29 @@ body.sidebar-toggled footer.sticky-footer {
   margin-bottom: 0.5rem;
 }
 .boton-agregar {
-  background: yellow;
-  border: 2px solid black;
-  box-shadow: 1px 1px yellow;
   height: 1.8rem;
   width: 10%;
-  font-size: 15px;
-  font-weight: 600;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
 }
 .boton-agregar a {
   color: black;
   text-decoration: none;
 }
 .boton-editar {
-  background: #3483fa;
-  border: 2px solid #3483fa;
-  box-shadow: 1px 1px #3483fa;
+  color: white;
   margin-right: 5px;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  width: 10%;
 }
 .boton-editar a {
   color: white;
   text-decoration: none;
 }
 .boton-eliminar {
-  background: red;
-  border: 2px solid red;
-  box-shadow: 1px 1px red;
+  width: 10%;
+  font-weight: bold;
 }
 .boton-eliminar a {
   color: white;

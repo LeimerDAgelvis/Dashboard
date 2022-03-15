@@ -2,6 +2,9 @@ import React from "react";
 import { useState, useEffect } from 'react'
 import ContentTotales from './ContentTotales'
 import UltimoCreado from './UltimoCreado';
+import TablaRow from "./TablaRow";
+import Usuarios from "./Usuarios"
+import Categorias from "./Categorias";
 
 function ContenTop(){
 
@@ -20,6 +23,9 @@ function ContenTop(){
             setUltUsuario(false)
         })
 
+    }, [usuarios])
+
+    useEffect( () => {
         fetch('/api/products')
         .then(response => response.json())
         .then(data => {
@@ -27,29 +33,33 @@ function ContenTop(){
             setUltProducto(false)
         })
 
+    }, [productos])
+
+    useEffect( () => {
         fetch('/api/categories')
         .then(response => response.json())
         .then(data => setCategorias(data))
-
-    }, [])
+    }, [categorias])
+    
 
     return (
         <React.Fragment>
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         {/*<!-- ContenTop -->*/}
-        <div className="row padded-h">
-            <ContentTotales titulo='Usuarios' total={usuarios.count}/>
+            <div className="row padded-h">
+                <ContentTotales titulo='Usuarios' total={usuarios.count}/>
 
-            <ContentTotales titulo='Productos' total={productos.count}/>
+                <ContentTotales titulo='Productos' total={productos.count}/>
 
-            <ContentTotales titulo='Categorias' total={categorias.count}/>    
+                <ContentTotales titulo='Categorias' total={categorias.count}/>    
 
-            {
-                ultimoUsuario ? <span>CARGANDO</span> : <UltimoCreado titulo='Usuario' ultimo={usuarios.data.slice(-1)[0].email}/>
-            }
-            {               
-                ultimoProducto ? <span>CARGANDO</span> : <UltimoCreado titulo='Producto' ultimo={productos.data.slice(-1)[0].title}/>
-            }
-        </div>
+                {
+                    ultimoUsuario ? <lottie-player src="https://assets3.lottiefiles.com/datafiles/cb81834f3b75c3d2aba9d8a58ad1f408/AE_JSON/loader1.json"  background="transparent"  speed="1"  style={{"width": "300px","height": "300px"}}  loop autoplay></lottie-player> : <UltimoCreado titulo='Usuario' ultimo={usuarios.data.slice(-1)[0].email}/>
+                }
+                {               
+                    ultimoProducto ? <lottie-player src="https://assets3.lottiefiles.com/datafiles/cb81834f3b75c3d2aba9d8a58ad1f408/AE_JSON/loader1.json"  background="transparent"  speed="1"  style={{"width": "300px","height": "300px"}}  loop autoplay></lottie-player> : <UltimoCreado titulo='Producto' ultimo={productos.data.slice(-1)[0].title}/>
+                }
+            </div>
         </React.Fragment>
     )
 }

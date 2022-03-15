@@ -36,7 +36,7 @@ function ProductoDetail(){
             <span>Precio: {Producto.price}</span>                                                        
             <br/>
             <div className="botones-div"> 
-                <button className="boton boton-editar"><Link to={`/products/edit/${id}`}>Editar</Link></button>
+                <button className="btn btn-primary boton-editar"><Link to={`/products/edit/${id}`}>Editar</Link></button>
             </div>
         </div>
     )

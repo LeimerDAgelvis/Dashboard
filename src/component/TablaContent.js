@@ -16,7 +16,7 @@ function TablaContent(){
         })
         .catch(err => console.log(err))
 
-    },[])
+    },[<TablaRow/>])
     return (
         <React.Fragment>
             {
