@@ -23,7 +23,7 @@ function ContenTop(){
             setUltUsuario(false)
         })
 
-    }, [usuarios])
+    }, [])
 
     useEffect( () => {
         fetch('/api/products')
@@ -33,13 +33,13 @@ function ContenTop(){
             setUltProducto(false)
         })
 
-    }, [productos])
+    }, [])
 
     useEffect( () => {
         fetch('/api/categories')
         .then(response => response.json())
         .then(data => setCategorias(data))
-    }, [categorias])
+    }, [])
     
 
     return (
