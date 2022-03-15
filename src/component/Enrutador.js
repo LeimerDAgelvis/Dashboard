@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import ContentWrapper from './ContentWrapper'
-import Tabla from './Tabla'
-import Usuarios from './Usuarios'
+import Tabla from './TablaProductos/Tabla'
+import Usuarios from './TablaUsuarios/Usuarios'
 import Categorias from './Categorias'
-import ProductoDetail from './ProductoDetail'
-import ProductoCreate from './ProductoCreate'
-import ProductoEdit from './ProductEdit'
+import ProductoDetail from './DetalleProductos/ProductoDetail'
+import ProductoCreate from './DetalleProductos/ProductoCreate'
+import ProductoEdit from './DetalleProductos/ProductEdit'
 function Enrutador () {
     return (
         <Routes>

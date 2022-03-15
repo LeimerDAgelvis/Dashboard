@@ -1,7 +1,7 @@
 import React from "react";
-import Usuarios from './Usuarios' 
+import Usuarios from './TablaUsuarios/Usuarios' 
 import Categorias from './Categorias'
-import Tabla from "./Tabla";
+import Tabla from "./TablaProductos/Tabla";
 
 
 function ContentWrapper() {

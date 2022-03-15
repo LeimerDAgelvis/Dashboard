@@ -2,9 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react'
 import ContentTotales from './ContentTotales'
 import UltimoCreado from './UltimoCreado';
-import TablaRow from "./TablaRow";
-import Usuarios from "./Usuarios"
-import Categorias from "./Categorias";
+
 
 function ContenTop(){
 
