@@ -8,6 +8,7 @@ function Categorias() {
         .then(response => response.json())
         .then(data => setCategorias(data.data))
     }, [])
+    
     return (
         <div className="card shadow position-top-box fit">
             <h3>Categorias</h3>

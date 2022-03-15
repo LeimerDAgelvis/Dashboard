@@ -100,11 +100,11 @@ function ProductoEdit(){
                 <input type="text" name="price" className="input-producto" placeholder={Producto.price} ref={price}/>                                                  
                 <br/>
                 <div className="botones-div"> 
-                    <button type="submit" className="boton boton-editar">Guardar</button>
+                    <button type="submit" className="btn btn-primary boton-editar">Guardar</button>
                 </div>
             </form>
             <form className="productoBox" action={`/products/${Producto.id}?_method=DELETE`} method="POST" encType="multipart/form-data" id="formulario">
-                <button className="boton boton-eliminar">Eliminar</button>
+                <button className="btn btn-danger boton-eliminar">Eliminar</button>
             </form>
         </div>
     )
