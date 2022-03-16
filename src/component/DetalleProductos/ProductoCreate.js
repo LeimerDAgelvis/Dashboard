@@ -88,8 +88,8 @@ function ProductoCreate(){
                 <input type="text" name="price" className="input-producto"  ref={price}/>                                                  
                 <br/>
                 <div className="botones-div"> 
-                    <button type="submit" className="boton boton-editar">Guardar</button>
-                    <button type="reset" className="boton boton-eliminar">Reset</button>
+                    <button type="submit" className="btn btn-primary boton-Guardar">Guardar</button>
+                    <button type="reset" className="btn btn-danger boton-reset">Reset</button>
                 </div>
             </form>
         </div>
