@@ -5,6 +5,7 @@ import React, { useRef, useState, useEffect } from "react";
 function UsuariosRow(props) {
     const cat = useRef();
     const userType = useRef();
+    const row = useRef();
     const userToUpdate = {email:"",type_id:1} //Setea el usuario para enviar a la API, con el tipo de usuario por default siendo el usuario común
     const [tipoUsuario, setTipoUsuario] = useState("")
     const [refresh, setRefresh] = useState(0)
@@ -77,10 +78,13 @@ function UsuariosRow(props) {
     },[tipoUsuario])
     useEffect(()=>{
         //Acá debería ir algo que fuerce al componente a refrescarse
+        if (refresh !== 0){
+            row.current.innerHTML = ""
+        }
     },[refresh])
     return (
         <React.Fragment>
-            <tr>
+            <tr ref={row}>
                 <td>{props.usuario.id}</td>
                 <td>{props.usuario.fullName}</td> 
                 <td>{props.usuario.email}</td>
