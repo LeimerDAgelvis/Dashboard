@@ -1,33 +1,44 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 
 
 function UsuariosRow(props) {
     const cat = useRef();
+    const userType = useRef();
     const userToUpdate = {email:"",type_id:1} //Setea el usuario para enviar a la API, con el tipo de usuario por default siendo el usuario común
+    const [tipoUsuario, setTipoUsuario] = useState("")
 
-    function getCategoryId (optionArray) {
-        let optionDescription = ""
-        let categoryId
+    function selectedOption (optionArray) {
+        //Obtiene el valor (texto) de la opción seleccionada dado un array de opciones
+        let valueToReturn = ""
         optionArray.forEach(option => {
             //Asigna el valor de la opción seleccionada a optionDescription
             if (option.selected === true) {
-                optionDescription = option.value
+                valueToReturn = option.value
             }
         })
+        return valueToReturn
+    }
+    function getCategoryId (optionArray) {
+        //Obtiene (y retorna) el id de la categoría seleccionada dado un array de opciones
+        let optionDescription = selectedOption(optionArray)
+        let categoryId = 0
         props.categorias.forEach(objetoCategoria => {
-            if (objetoCategoria.user_type == optionDescription) {
+            if (objetoCategoria.user_type === optionDescription) {
                 categoryId =  objetoCategoria.id
             }
         })
         return categoryId
     }
+
     function changeUserType (e) {
+        //Se ejecuta al presionar el botón "Modificar" y se encarga de hacer el llamado a la api, modificar el tipo de usuario en la BBDD
+        //y llamar a la actualzización de estado de la columna "Tipo"
         e.preventDefault();
         let options = Array.from(cat.current.children); // Captura las opciones dentro del select y las transofmra en array
+        //Armado del usuario que se enviará al servidor
         userToUpdate.type_id = getCategoryId(options); // captura el Id de la categoría seleccionada y lo asigna al objeto que funcionará de update
         userToUpdate.email = props.usuario.email
-        console.log(userToUpdate)
 
         fetch('/api/userCategories?_method=PUT',{
             method:'POST',
@@ -36,15 +47,29 @@ function UsuariosRow(props) {
                 'Content-Type': 'application/json'},
             body:JSON.stringify(userToUpdate)
         })
-        .then(console.log('success'));
+        .then(updateUserType(options));
     }
+
+    function updateUserType(optionArray) {
+        //Actualiza el estado de tipoUsuario con la opción seleccionada en el select
+        let optionDescription = selectedOption(optionArray)
+        setTipoUsuario(optionDescription)
+    }  
+    useEffect( () => {
+        //Hook que se encarga de actualizar el valor de la tabla cada vez que cambie el estado de tipoUsuario
+        if (tipoUsuario !== ""){
+            //Esto evita que pise todos los valores de la tabla cuando se carga el componente
+            userType.current.innerText = tipoUsuario
+        }
+    },[tipoUsuario])
+    
     return (
         <React.Fragment>
             <tr>
                 <td>{props.usuario.id}</td>
                 <td>{props.usuario.fullName}</td> 
                 <td>{props.usuario.email}</td>
-                <td>{props.usuario.user_type.user_type}</td>
+                <td ref={userType}>{props.usuario.user_type.user_type}</td>
                 <td>
                     <select ref={cat}>
                         {props.categorias.map((categoria,i) => 

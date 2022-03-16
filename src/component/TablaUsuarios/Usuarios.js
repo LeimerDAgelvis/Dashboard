@@ -5,20 +5,20 @@ function Usuarios() {
     const [Usuarios, setUsuarios] = useState([])
     const [Categorias, setCategorias] = useState([])
 
-    useEffect( async () => {
-        await fetch('/api/users')
-        .then(response => response.json())
-        .then(data => {
-            data.data.forEach(element => element.password = "") //Remueve el password de los usuarios para que no sea accesible
-            setUsuarios(data.data)
-        })
-        await fetch('/api/userCategories')
-        .then(response => response.json())
-        .then(data => {
-            setCategorias (data.data)
-        })
+    useEffect( () => {
+       
+        async function fetchData () {
 
-    }, [Categorias])
+            let users = await fetch('/api/users').then(response => response.json())
+            let categories = await fetch('/api/userCategories').then(response => response.json())
+            setUsuarios(users.data)
+            setCategorias(categories.data)
+            
+        }
+        fetchData();
+
+    }, [])
+
 
     return (
         <div className="card shadow position-top-box fit">
