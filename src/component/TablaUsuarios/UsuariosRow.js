@@ -7,7 +7,10 @@ function UsuariosRow(props) {
     const userType = useRef();
     const userToUpdate = {email:"",type_id:1} //Setea el usuario para enviar a la API, con el tipo de usuario por default siendo el usuario común
     const [tipoUsuario, setTipoUsuario] = useState("")
-
+    const [refresh, setRefresh] = useState(0)
+    function autoRefresh (n) {
+        setRefresh(refresh+n)
+    }
     function selectedOption (optionArray) {
         //Obtiene el valor (texto) de la opción seleccionada dado un array de opciones
         let valueToReturn = ""
@@ -55,6 +58,16 @@ function UsuariosRow(props) {
         let optionDescription = selectedOption(optionArray)
         setTipoUsuario(optionDescription)
     }  
+    function deleteUser () {
+        fetch(`/api/users/${props.usuario.id}?_method=DELETE`, {
+            method:'POST',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'},
+            //body:JSON.stringify(userToDelete)
+        })
+        .then(autoRefresh(1));
+    }
     useEffect( () => {
         //Hook que se encarga de actualizar el valor de la tabla cada vez que cambie el estado de tipoUsuario
         if (tipoUsuario !== ""){
@@ -62,7 +75,9 @@ function UsuariosRow(props) {
             userType.current.innerText = tipoUsuario
         }
     },[tipoUsuario])
-    
+    useEffect(()=>{
+        //Acá debería ir algo que fuerce al componente a refrescarse
+    },[refresh])
     return (
         <React.Fragment>
             <tr>
@@ -77,6 +92,7 @@ function UsuariosRow(props) {
                     </select>
                 </td>
                 <td><button className="btn btn-primary boton-modificar" onClick={changeUserType}>Modificar</button></td>
+                <td><button className="btn btn-primary boton-modificar" onClick={deleteUser}>Eliminar</button></td>
             </tr>
         </React.Fragment>
     )

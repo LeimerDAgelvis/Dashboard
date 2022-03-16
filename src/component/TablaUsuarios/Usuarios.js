@@ -4,17 +4,16 @@ import UsuariosRow from "./UsuariosRow"
 function Usuarios() {
     const [Usuarios, setUsuarios] = useState([])
     const [Categorias, setCategorias] = useState([])
+    async function fetchData () {
 
+        let users = await fetch('/api/users').then(response => response.json())
+        let categories = await fetch('/api/userCategories').then(response => response.json())
+        setUsuarios(users.data)
+        setCategorias(categories.data)
+        
+    }
     useEffect( () => {
        
-        async function fetchData () {
-
-            let users = await fetch('/api/users').then(response => response.json())
-            let categories = await fetch('/api/userCategories').then(response => response.json())
-            setUsuarios(users.data)
-            setCategorias(categories.data)
-            
-        }
         fetchData();
 
     }, [])
@@ -32,6 +31,7 @@ function Usuarios() {
                         <th scope="col">Tipo</th>
                         <th scope="col">Cambiar tipo</th>
                         <th scope="col">Enviar cambio</th>
+                        <th scope="col">Eliminar usuario</th>
                     </tr>
                 </thead>
                 <tbody>
