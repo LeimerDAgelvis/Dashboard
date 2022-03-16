@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import Usuarios from '../TablaUsuarios/Usuarios'
 
 
 
@@ -8,6 +9,7 @@ function UsuariosRow(props) {
     const row = useRef();
     const userToUpdate = {email:"",type_id:1} //Setea el usuario para enviar a la API, con el tipo de usuario por default siendo el usuario común
     const [tipoUsuario, setTipoUsuario] = useState("")
+
     const [refresh, setRefresh] = useState(0)
     function autoRefresh (n) {
         setRefresh(refresh+n)
@@ -96,7 +98,7 @@ function UsuariosRow(props) {
                     </select>
                 </td>
                 <td><button className="btn btn-primary boton-modificar" onClick={changeUserType}>Modificar</button></td>
-                <td><button className="btn btn-primary boton-modificar" onClick={deleteUser}>Eliminar</button></td>
+                <td><button className="btn btn-warning" onClick={deleteUser}>Eliminar</button></td>
             </tr>
         </React.Fragment>
     )
