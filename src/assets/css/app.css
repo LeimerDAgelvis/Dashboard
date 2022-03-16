@@ -6835,6 +6835,7 @@ button.bg-dark:hover {
 .mb-4,
 .my-4 {
   margin-bottom: 1.5rem !important;
+  min-width: max-content;
 }
 .ml-4,
 .mx-4 {
@@ -10011,7 +10012,7 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 .fit {
-  min-width: max-content;
+  min-width: content;
 }
 .wrapper {
   display: flex;
@@ -10077,4 +10078,12 @@ body.sidebar-toggled footer.sticky-footer {
 .boton-eliminar a {
   color: white;
   text-decoration: none;
+}
+.select-categoria {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 80px;
 }

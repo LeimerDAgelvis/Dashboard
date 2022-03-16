@@ -71,7 +71,7 @@ function UsuariosRow(props) {
                 <td>{props.usuario.email}</td>
                 <td ref={userType}>{props.usuario.user_type.user_type}</td>
                 <td>
-                    <select ref={cat}>
+                    <select class= "select-categoria" ef={cat}>
                         {props.categorias.map((categoria,i) => 
                         <option key={`categoria${i}`} value={categoria.user_type}>{categoria.user_type}</option>)}
                     </select>
