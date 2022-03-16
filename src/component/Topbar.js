@@ -21,7 +21,7 @@ function Topbar(){
 						<li className="nav-item dropdown no-arrow">
 							<a className="nav-link dropdown-toggle" href="/" id="userDropdown">
 								<span className="mr-2 d-none d-lg-inline text-gray-600 small">Leimer Delgado</span>
-								<img className="img-profile rounded-circle" src={foto} alt="Jordan Walke - Creador de React" width="60"/>
+								<img className="img-profile rounded-circle" src={foto} alt="Leimer Delgado - Creador de React" width="60"/>
 							</a>
 						</li>
 
