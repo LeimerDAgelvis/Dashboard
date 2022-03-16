@@ -45,6 +45,9 @@ function ContenTop(){
         <React.Fragment>
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         {/*<!-- ContenTop -->*/}
+        <div className="content-text" >
+						<span> Dashboard </span>
+					</div>
             <div className="row padded-h">
                 <ContentTotales titulo='Usuarios' total={usuarios.count}/>
 

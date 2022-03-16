@@ -2303,6 +2303,8 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(247, 203, 91, 0.5);
 }
 .btn-danger {
+  width: 7%;
+  margin: 0.5rem;
   color: #fff;
   background-color: #e74a3b;
   border-color: #e74a3b;
@@ -10047,7 +10049,7 @@ body.sidebar-toggled footer.sticky-footer {
   font-size: 20px;
   text-align: center;
   font-weight: bold;
-  width: 15%;
+  width: 10%;
   margin-bottom: 0.5rem;
 }
 .boton-agregar {
@@ -10086,4 +10088,11 @@ body.sidebar-toggled footer.sticky-footer {
   height: 30px;
   padding: 5px;
   width: 80px;
+}
+
+.content-text {
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 1.3rem 1.5rem;
 }
