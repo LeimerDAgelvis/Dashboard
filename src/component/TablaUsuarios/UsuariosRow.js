@@ -1,7 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-import Usuarios from '../TablaUsuarios/Usuarios'
-
-
 
 function UsuariosRow(props) {
     const cat = useRef();
@@ -98,7 +95,7 @@ function UsuariosRow(props) {
                     </select>
                 </td>
                 <td><button className="btn btn-primary boton-modificar" onClick={changeUserType}>Modificar</button></td>
-                <td><button className="btn btn-warning" onClick={deleteUser}>Eliminar</button></td>
+                <td><button className="btn btn-danger" onClick={deleteUser}>Eliminar</button></td>
             </tr>
         </React.Fragment>
     )
