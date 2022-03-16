@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 function ContentTotales(props){
 
     return(
