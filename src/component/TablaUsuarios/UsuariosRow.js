@@ -51,7 +51,7 @@ function UsuariosRow(props) {
                         <option key={`categoria${i}`} value={categoria.user_type}>{categoria.user_type}</option>)}
                     </select>
                 </td>
-                <td><button onClick={changeUserType}>Modificar</button></td>
+                <td><button class="btn btn-primary boton-modificar" onClick={changeUserType}>Modificar</button></td>
             </tr>
         </React.Fragment>
     )
