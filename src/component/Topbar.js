@@ -1,5 +1,6 @@
 import React from 'react';
 import foto from '../assets/images/leimerdelgado.png';
+import { Link } from 'react-router-dom'
 
 function Topbar(){
     return(
@@ -19,10 +20,10 @@ function Topbar(){
 
 						{/*<!-- Nav Item - User Information -->*/}
 						<li className="nav-item dropdown no-arrow">
-							<a className="nav-link dropdown-toggle" href="/" id="userDropdown">
+							<Link className="nav-link dropdown-toggle" to="/" id="userDropdown">
 								<span className="mr-2 d-none d-lg-inline text-gray-600 small">Leimer Delgado</span>
 								<img className="img-profile rounded-circle" src={foto} alt="Leimer Delgado - Creador de React" width="60"/>
-							</a>
+							</Link>
 						</li>
 
 					</ul>
