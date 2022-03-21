@@ -9,18 +9,28 @@ function ProductoEdit(){
     let { id } = useParams();
     let navigate = useNavigate();
 
-    useEffect( () => {
-        fetch(`/api/products/${id}`)
-        .then(response => response.json())
-        .then(data => {
-            setProducto(data)})
-    }, []);
-
     const title = useRef()
     const description = useRef();
     const model = useRef();
     const img = useRef();
     const price = useRef();
+  
+    useEffect( () => {
+        fetch(`/api/products/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            setProducto(data)
+        })
+    },[]);
+
+    useEffect (() => {
+        //Asigna el valor de cada producto en el input correspondiente, y muestra el input vacío en la primera renderización
+            title.current.value = Producto.title === undefined ? "" : Producto.title
+            description.current.value = Producto.description === undefined ? "" : Producto.description
+            model.current.value = Producto.model === undefined ? "" : Producto.model
+            price.current.value = Producto.price === undefined ? "" : Producto.price
+    },[Producto])
+    
 
     function postToBackEnd (e) {
         e.preventDefault();
@@ -49,15 +59,15 @@ function ProductoEdit(){
             <form className="productoBox" action={`/api/products/edit/${Producto.id}?_method=PUT`} method="POST" encType="multipart/form-data" id="formulario" onSubmit={postToBackEnd}>
                 <span>Nombre del producto: </span> 
                 <br/>
-                <input type="text" name= "title" className="input-producto" placeholder={Producto.title} ref={title}/>
+                <input type="text" name= "title" className="input-producto" ref={title}/>
                 <br/>
                 <span>Descripcion del producto: </span>
                 <br/>
-                <textarea className="input-producto" rows= "10" cols="50" name= "description" placeholder={Producto.description} ref={description}></textarea>
+                <textarea className="input-producto" rows= "10" cols="50" name= "description" ref={description}></textarea>
                 <br/>
                 <span>Modelo: </span>
                 <br/>
-                <input type="text" name="model" className="input-producto" placeholder={Producto.model} ref={model}/>                                                  
+                <input type="text" name="model" className="input-producto" ref={model}/>                                                  
                 <br/>
                 <span>Imagen: </span>
                 <br/>
@@ -97,7 +107,7 @@ function ProductoEdit(){
                 <br/>
                 <span>Precio: </span>
                 <br/>
-                <input type="text" name="price" className="input-producto" placeholder={Producto.price} ref={price}/>                                                  
+                <input type="text" name="price" className="input-producto" ref={price}/>                                                  
                 <br/>
                 <div className="botones-div"> 
                     <button type="submit" className="btn btn-primary boton-editar">Guardar</button>

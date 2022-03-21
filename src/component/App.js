@@ -1,18 +1,27 @@
 import React from 'react';
 import Sidebar from './Sidebar';
-import DashboardMain from './Dashboard';
 import "../assets/css/app.css";
-import { BrowserRouter } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import Topbar from './Topbar';
+import Footer from './Footer';
+
+
 
 function App() {
   return (
     <React.Fragment>
-        <BrowserRouter>
           <div id="wrapper">
             <Sidebar />
-            <DashboardMain />
+            <div id="content-wrapper" className="d-flex flex-column">
+                <div id="content">
+                    <Topbar />  
+                    {/* Outlet llamará a las distintas rutas declaradas dentro de app según el enrutador */}
+                    <Outlet />
+                </div>
+                <Footer/>
+            </div>
           </div>
-        </BrowserRouter>
+
     </React.Fragment>
   );
 } 

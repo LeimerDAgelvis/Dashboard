@@ -1,7 +1,7 @@
 import React from 'react';
 import Topbar from './Topbar';
-
-import Enrutador from './Enrutador';
+import ContentWrapper from './ContentWrapper'
+/* import Enrutador from './Enrutador'; */
 import Footer from './Footer';
 
 function DashboardMain(){
@@ -9,8 +9,9 @@ function DashboardMain(){
         <React.Fragment>
             <div id="content-wrapper" className="d-flex flex-column">
                 <div id="content">
-                    <Topbar />                      
-                    <Enrutador />
+                    <Topbar />  
+                    <ContentWrapper />                    
+                    {/* <Enrutador /> */}
                 </div>
                 <Footer/>
             </div>
