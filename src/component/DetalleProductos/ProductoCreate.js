@@ -14,26 +14,26 @@ function ProductoCreate(){
 
     function postToBackEnd (e) {
         e.preventDefault();
-        fetch('/api/products/crear',{
-            method:'POST',
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'},
-            body:JSON.stringify({
-                title:title.current.value,
-                description:description.current.value,
-                model:model.current.value,
-                img:img.current.value,
-                price:price.current.value
-            })
-        })
-        .then(navigate('/'));
+         fetch('/api/products/crear',{
+             method:'POST',
+             headers:{
+                 'Accept': 'application/json',
+                 'Content-Type': 'application/json'},
+             body:JSON.stringify({
+                 title:title.current.value,
+                 description:description.current.value,
+                 model:model.current.value,
+                 img:img.current.value,
+                 price:price.current.value
+             })
+         })
+         .then(navigate('/'));
         
     }
     return (
         <div className="card shadow position-top-box">
             <h3>Crear Producto</h3>
-            <form className="productoBox" action='/api/products/crear' method="POST" encType="multipart/form-data" id="formulario" onSubmit={postToBackEnd}>
+            <form className="productoBox" /* action='/api/products/crear' method="POST" encType="multipart/form-data" */ id="formulario" onSubmit={postToBackEnd}>
                 <br/>
                 <span>Nombre del producto:</span> 
                 <br/>
