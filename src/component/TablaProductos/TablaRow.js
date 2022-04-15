@@ -6,7 +6,7 @@ function TablaRow(props){
     
     return (
         <React.Fragment>
-        <tr>
+        <tr>{/*<!-- tr: fila y ahi sus celdas td => titulo, precio,stock y Detalle -->*/}
             <td>{props.product.title}</td>
             <td>{props.product.price}</td>
             <td>1</td>

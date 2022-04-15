@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function ProductoCreate(){
     
     let navigate = useNavigate();
-
+    // useRef captura todos los elementos del DOM
     const title = useRef()
     const description = useRef();
     const model = useRef();
@@ -15,13 +15,14 @@ function ProductoCreate(){
     function postToBackEnd (e) {
         e.preventDefault();
          fetch('/api/products/crear',{
-             method:'POST',
+             method:'POST',// se guarda en el back-end
              headers:{
                  'Accept': 'application/json',
                  'Content-Type': 'application/json'},
-             body:JSON.stringify({
+                 
+             body:JSON.stringify({//lo que tengo en el bodi lo convierto en una cadena de texto Json(JSON.stringify), y reemplazo los valores
                  title:title.current.value,
-                 description:description.current.value,
+                 description:description.current.value,// current que tenes un objeto con la propiedad current, con este lo manipulo a descripcion
                  model:model.current.value,
                  img:img.current.value,
                  price:price.current.value

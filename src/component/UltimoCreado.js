@@ -12,7 +12,7 @@ function UltimoCreado(props) {
                         <div className="col mr-2">
                             <div className={`text-xs font-weight-bold text-primary text-uppercase mb-1`}> {` Ultimo ${props.titulo} creado`}</div>
                             <div className="h5 mb-0 text-gray-800">{props.ultimo}</div>
-                                    
+                                    {/* usuario/producto último creado */}
                         </div>
                     </div>
                 </div>
@@ -22,4 +22,4 @@ function UltimoCreado(props) {
     )
 }
 
-export default UltimoCreado
+export default UltimoCreado;

@@ -74,13 +74,18 @@ function UsuariosRow(props) {
             //Esto evita que pise todos los valores de la tabla cuando se carga el componente
             userType.current.innerText = tipoUsuario
         }
-    },[tipoUsuario])
+    },[tipoUsuario]);
+
     useEffect(()=>{
         //Acá debería ir algo que fuerce al componente a refrescarse
         if (refresh !== 0){
             row.current.innerHTML = ""
         }
-    },[refresh])
+      //  return function limpiarDatos(){ ... ejemplo use Effect 3er tiempo(desmontaje)
+         //   refresh = 0;
+        //}
+    },[refresh]);
+
     return (
         <React.Fragment>
             <tr ref={row}>
@@ -99,6 +104,6 @@ function UsuariosRow(props) {
             </tr>
         </React.Fragment>
     )
-}
+};
 
-export default UsuariosRow
+export default UsuariosRow;

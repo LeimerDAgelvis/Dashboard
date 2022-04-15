@@ -29,18 +29,18 @@ function ProductoEdit(){
             description.current.value = Producto.description === undefined ? "" : Producto.description
             model.current.value = Producto.model === undefined ? "" : Producto.model
             price.current.value = Producto.price === undefined ? "" : Producto.price
-    },[Producto])
+    },[Producto]);
     
 
-    function postToBackEnd (e) {
+    function postToBackEnd (e) {// publicar en back-end
         e.preventDefault();
         fetch(`/api/products/edit/${Producto.id}?_method=PUT`,{
             method:'POST',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'},
-            body:JSON.stringify({
-                title:title.current.value,
+            body:JSON.stringify({// lo manda por post al back-end y combierte el objeto a un json  mas legible para el ojo humano returnando la actualizacion a la vista
+                title:title.current.value, // agarra el valor que es convertido en cadena de texto JSON
                 description:description.current.value,
                 model:model.current.value,
                 img:img.current.value,

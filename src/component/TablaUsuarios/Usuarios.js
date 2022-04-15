@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import UsuariosRow from "./UsuariosRow"
 
 function Usuarios() {
-    const [Usuarios, setUsuarios] = useState([])
-    const [Categorias, setCategorias] = useState([])
+    const [Usuarios, setUsuarios] = useState([]);
+    const [Categorias, setCategorias] = useState([]);
+
     async function fetchData () {
 
-        let users = await fetch('/api/users').then(response => response.json())
-        let categories = await fetch('/api/userCategories').then(response => response.json())
+        let users = await fetch('/api/users').then(response => response.json());
+        let categories = await fetch('/api/userCategories').then(response => response.json());
         setUsuarios(users.data)
         setCategorias(categories.data)
         
@@ -16,7 +17,7 @@ function Usuarios() {
        
         fetchData();
 
-    }, [])
+    }, []);
 
 
     return (
@@ -46,4 +47,4 @@ function Usuarios() {
     )
 }
 
-export default Usuarios
+export default Usuarios;

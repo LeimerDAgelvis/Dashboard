@@ -10,7 +10,7 @@ function ProductoDetail(){
     useEffect( () => {
         fetch(`/api/products/${id}`)
         .then(response => response.json())
-        .then(data => setProducto(data))
+        .then(data => setProducto(data))// setProducto es el nuevo valor que se agrega aproducto en el indice 1 del array useState
     }, [])
 
     return (

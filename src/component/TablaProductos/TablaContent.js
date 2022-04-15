@@ -5,7 +5,7 @@ import TablaRow from "./TablaRow";
 
 //const dataProductos = [GabineteAT, TecladoGenius, MouseLogitech, MonitorSamsung, LaptopLenovo, MotherboardASUS];
 
-function TablaContent(){
+function TablaContent(){  
     const [productos, setProductos] = useState([])
     useEffect(()=>{
         fetch('/api/products')
@@ -16,12 +16,12 @@ function TablaContent(){
         })
         .catch(err => console.log(err))
 
-    },[])
+    },[])// se monta el componente por primera vez
     return (
         <React.Fragment>
             {
-                productos.map((producto)=>{
-                    return (
+                productos.map((producto)=>{ // map iterra en cada elemnto y 
+                    return (//y devuelve dicho array y lo imprime en cada fila de la tabla por su id
                         <TablaRow product={producto} key={producto.id} />                      
                         )
                 })

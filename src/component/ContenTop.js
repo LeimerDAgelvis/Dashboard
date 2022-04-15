@@ -50,9 +50,9 @@ function ContenTop(){
 						<span> Dashboard </span>
 					</div>
             <div className="row padded-h">
-                <ContentTotales titulo='Usuarios' total={usuarios.count}/>
+                <ContentTotales titulo='Usuarios' total={usuarios.count}/>  {/*<!-- Propiedades de los componentes : titulo y total los cuales son usados como 'props' en contentTotales -->*/}
 
-                <ContentTotales titulo='Productos' total={productos.count}/>
+                <ContentTotales titulo='Productos' total={productos.count}/>  {/*<!-- Count: contador que cuenta el numero de productos en este caso -->*/}
 
                 <ContentTotales titulo='Categorias' total={categorias.count}/>    
 
