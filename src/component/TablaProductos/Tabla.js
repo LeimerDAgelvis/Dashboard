@@ -11,8 +11,8 @@ function Tabla({tituloTabla}){
             <button className="btn btn-warning btn-sm boton-agregar"><Link to='/products/crear'>Crear</Link></button>
             <table className="table">
                 <thead>
-                <tr> {/*<!--tr: fila de la tabla-->*/}
-                    <th scope="col">Producto</th>{/*<!-- th : cabecera de la tabla-->*/}
+                <tr> 
+                    <th scope="col">Producto</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Stock</th>
                     <th scope="col">Detalle</th>

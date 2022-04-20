@@ -15,7 +15,6 @@ function Enrutador () {
     return (
         <Routes>
             <Route exact path='/' element={<App/>} >
-                  {/* Outlet llamará a las distintas rutas declaradas dentro de App según el enrutador */}
                 <Route index element={<ContentWrapper />} />
                 <Route path='usuarios' element={<Usuarios/>}/>
                 <Route path='products' element={<Tabla/>}/>
