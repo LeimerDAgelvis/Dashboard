@@ -11,7 +11,7 @@ function ProductoDetail(){
         fetch(`/api/products/${id}`)
         .then(response => response.json())
         .then(data => setProducto(data))// setProducto es el nuevo valor que se agrega aproducto en el indice 1 del array useState
-    }, [])
+    }, [id]);
 
     return (
         <div className="card shadow position-top-box">

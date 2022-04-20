@@ -21,7 +21,7 @@ function ProductoEdit(){
         .then(data => {
             setProducto(data)
         })
-    },[]);
+    },[id]);
 
     useEffect (() => {
         //Asigna el valor de cada producto en el input correspondiente, y muestra el input vacío en la primera renderización
